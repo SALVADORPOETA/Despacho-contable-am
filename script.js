@@ -22,6 +22,22 @@
     })
   }
 
+  /* --------- button to top ---------- */
+  const backToTop = document.getElementById('back-to-top')
+
+  if (backToTop) {
+    window.addEventListener('scroll', function () {
+      backToTop.classList.toggle('is-visible', window.scrollY > 400)
+    })
+
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      })
+    })
+  }
+
   /* ---------- footer year ---------- */
   const yearEl = document.getElementById('year')
   if (yearEl) yearEl.textContent = new Date().getFullYear()
